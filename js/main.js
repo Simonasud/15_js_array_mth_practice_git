@@ -46,6 +46,29 @@ console.log("onlyPositivesArr ===", onlyPositivesArr);
 //jei yra tai atrenkam
 //jei ne praleidziam
 
-const atrinktiKasPenkta = mainArr.filter((sk, index) => index % 5 === 0);
+const atrinktiKasPenkta = mainArr.filter((sk, idx) => idx % 5 === 0);
 
 console.log(atrinktiKasPenkta);
+function atrinkKas(kelintas) {
+  let rez = mainArr.filter((sk, idx) => idx % kelintas === 0);
+  return rez;
+}
+let atrArrow = (kelintas) => mainArr.filter((sk, idx) => idx % kelintas === 0);
+const atrinkta = atrinkKas(10);
+console.log("atrinkta ===", atrinkta);
+
+// Sukurti funkciją, kuri ima masyvą ir atspausdina kiek-
+// vieną jo reikšmę atskirai:
+// [0] => 2. [1] => 12. [2] => 33. (nieko negrąžina)
+
+/**
+ *
+ * @param {number[]} arr
+ */
+function printArray(arr) {
+  arr.forEach((sk, idx) => {
+    let rez = `[${idx}] => ${sk}`;
+    console.log(rez);
+  });
+}
+printArray(mainArr);
